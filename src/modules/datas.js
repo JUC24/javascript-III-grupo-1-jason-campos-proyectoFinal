@@ -1,4 +1,4 @@
-function getPlantName(plantName) /* getRealPlantName(genericName) */ {
+function getPlantName(plantName) {
   switch (plantName) {
     case 'Low Light Plants':
       return 'Sansevieria';
@@ -21,7 +21,7 @@ function getPlantName(plantName) /* getRealPlantName(genericName) */ {
   }
 }
 
-function getPlantImage(plantName) /* getPlantImageName(plantName) */ {
+function getPlantImage(plantName) {
   switch (plantName) {
     case 'Low Light Plants':
       return 'plant-sansevieria';
@@ -46,7 +46,7 @@ function getPlantImage(plantName) /* getPlantImageName(plantName) */ {
   }
 }
 
-function getPotImage(material, style) /* getPotImageName(material, style) */ {
+function getPotImage(material, style) {
   let potName = `simple-${material}-pot`;
 
   if (style === 'decorated') {
@@ -58,7 +58,7 @@ function getPotImage(material, style) /* getPotImageName(material, style) */ {
   return potName;
 }
 
-function getExtraImage(extra) /* getExtraImageName(extra) */ {
+function getExtraImage(extra) {
   switch (extra) {
     case 'moss-pole':
       return 'moss-pole';

@@ -59,7 +59,6 @@ function processData() {
       break;
   }
 
-  // revizar esto despues con lo de las imagenes
   switch (waterQuantity) {
     case 'overwater':
       plantName += plantName.includes('Toxic')
@@ -109,7 +108,6 @@ function processData() {
       break;
   }
 
-  // revizar imagenes
   plantBuilder
     .setPotColor('clay')
     .withExtras(extra.map((extras) => getExtraImage(extras)));

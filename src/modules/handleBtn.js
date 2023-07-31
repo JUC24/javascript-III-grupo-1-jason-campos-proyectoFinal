@@ -8,8 +8,8 @@ function sendForm() {
   recomendPlantForm.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    const plantResult = processData(); // Almacena el resultado de processData() en una variable
-    renderRecommendation(plantResult); // Pasa el resultado de processData() a renderPlantInfo()
+    const plantResult = processData();
+    renderRecommendation(plantResult);
 
     recommendationSection.style.display = 'block';
   });
