@@ -1,0 +1,51 @@
+body {
+  background-color: lightblue;
+  color: rebeccapurple;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: 2rem;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  margin-top: 2rem;
+}
+
+legend {
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+button {
+  padding: 1rem;
+  border-radius: 0.6rem;
+  background-color: rebeccapurple;
+  color: beige;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.homeView {
+  display: flex;
+  align-items: stretch;
+}
+
+.fromFieldset--margin {
+  margin-bottom: 2rem;
+}
+
+.btn--size {
+  width: 8rem;
+  margin-left: 2.5rem;
+}
+
+.plantInfo{
+  border: 1px solid greenyellow;
+}

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlantWorl</title>
+  </head>
+  <body>
+    <main>
+      <h2>Let us find the perfect plant for you</h2>
+      <div class="homeView">
+        <form id="myForm">
+          <!--****************************Quetion 1**************************************-->
+          <fieldset>
+            <legend>Where will you place your plant?</legend>
+            <label>
+              <input type="radio" name="plantPlacement" value="insideIndirect" required/>
+              Inside with some indirect light
+            </label>
+            <label>
+              <input type="radio" name="plantPlacement" value="insideLotIndirect" required/>
+              Inside with a lot of indirect light
+            </label>
+            <label>
+              <input type="radio" name="plantPlacement" value="outside" required/>
+              Outside
+            </label>
+          </fieldset>
+          <!--****************************Quetion 2**************************************-->
+          <fieldset>
+            <legend>Will it receive direct sunlight?</legend>
+            <label>
+              <input type="radio" name="receiveSunlinght" value="yes" required />
+              YES
+            </label>
+            <label>
+              <input type="radio" name="receiveSunlinght" value="no" required />
+              NO
+            </label>
+          </fieldset>
+          <!--****************************Quetion 3**************************************-->
+          <fieldset>
+            <legend>Do you have pets (cats or dogs)?</legend>
+            <label>
+              <input type="radio" name="havePets" value="yes" required />
+              YES
+            </label>
+            <label>
+              <input type="radio" name="havePets" value="no" required />
+              NO
+            </label>
+          </fieldset>
+          <!--****************************Quetion 4**************************************-->
+          <fieldset>
+            <legend>Do you tend to overwater or underwater?</legend>
+            <label>
+              <input type="radio" name="waterQuantity" value="Overwater" required />
+              Overwater
+            </label>
+            <label>
+              <input type="radio" name="waterQuantity" value="Underwater" required/>
+              Underwater
+            </label>
+            <label>
+              <input type="radio" name="waterQuantity" value="notKnow" required />
+              Neither / I don`t know
+            </label>
+          </fieldset>
+          <!--****************************Quetion 5**************************************-->
+          <fieldset>
+            <legend>How do you define your style?</legend>
+            <label>
+              <input type="radio" name="style" value="minimalism" required />
+              I like minimalism and material colors
+            </label>
+            <label>
+              <input type="radio" name="style" value="someDecoration" required />
+              I like some decoration and simple colors
+            </label>
+            <label>
+              <input type="radio" name="style" value="lotsDecoration" required />
+              I like a lot of decoration and bright colors
+            </label>
+          </fieldset>
+          <!--****************************Quetion 6**************************************-->
+          <fieldset class="fromFieldset--margin">
+            <legend>Do you want to add any extra elements to your plant?</legend>
+            <label>
+              <input type="checkbox" name="extras" value="moss-pole" />
+              Moss pole
+            </label>
+            <label>
+              <input type="checkbox" name="extras" value="pebbles" />
+              Pebbles
+            </label>
+            <label>
+              <input type="checkbox" name="extras" value="mini-plants" />
+              Smaller plants
+            </label>
+          </fieldset>
+          <div>
+            <button  id="SendForm" class="" type="submit">GET YOUR PLANT!</button>
+            <button  id="clearForm" class="btn--size" type="reset">Clear</button>
+          </div>
+        </form>
+        <div id="recommendation" class="recommendationBox">
+          <h2>Plant Recommendation:</h2>
+          <div id="plantInfo" class="plantInfo">
+            <!-- Aquí se mostrará la ficha de planta con la recomendación -->
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+
+
