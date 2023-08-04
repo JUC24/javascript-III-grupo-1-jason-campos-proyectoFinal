@@ -3,7 +3,7 @@ import renderRecommendation from './renderPlantInfo';
 
 function sendForm() {
   const recomendPlantForm = document.getElementById('myForm');
-  const recommendationSection = document.getElementById('plantInfo');
+  const recommendationSection = document.getElementById('recommendation');
 
   recomendPlantForm.addEventListener('submit', function (event) {
     event.preventDefault();

@@ -4,9 +4,12 @@ const common = require('./webpack.common');
 
 module.exports = merge(common, {
   mode: 'development',
-  entry: './src/index.js',
+  entry: {
+    index: './src/index.js',
+    custtom: './src/custtom.js',
+  },
   output: {
-    filename: 'main.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
   },
 });

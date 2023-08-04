@@ -9,22 +9,30 @@ function renderRecommendation(plant) {
   const recommendationContainer = document.getElementById('recommendation');
   recommendationContainer.innerHTML = '';
 
+  const cardInfo = document.createElement('div');
+  cardInfo.className = 'recommended-card__info';
+  recommendationContainer.appendChild(cardInfo);
+
   const title = document.createElement('h2');
-  title.textContent = getPlantName(plant.name);
-  recommendationContainer.appendChild(title);
+  title.textContent = 'Plant Recommendation:';
+  cardInfo.appendChild(title);
+
+  const subtitle = document.createElement('h3');
+  subtitle.textContent = getPlantName(plant.name);
+  cardInfo.appendChild(subtitle);
 
   const imageContainer = document.createElement('div');
   imageContainer.classList.add('image-container');
 
   const plantImage = document.createElement('img');
-  plantImage.src = `assets/${getPlantImage(plant.name)}.png`;
+  plantImage.src = `/assets/${getPlantImage(plant.name)}.png`;
   plantImage.alt = getPlantName(plant.name);
   imageContainer.appendChild(plantImage);
 
   if (plant.extras.length > 0) {
     for (const extra of plant.extras) {
       const extraImage = document.createElement('img');
-      extraImage.src = `assets/${getExtraImage(extra)}.png`;
+      extraImage.src = `/assets/${getExtraImage(extra)}.png`;
       extraImage.alt = extra;
       imageContainer.appendChild(extraImage);
     }
@@ -32,7 +40,7 @@ function renderRecommendation(plant) {
 
   if (plant.potStyle) {
     const potImage = document.createElement('img');
-    potImage.src = `assets/${getPotImage(
+    potImage.src = `/assets/${getPotImage(
       plant.potMaterial,
       plant.potStyle,
     )}.png`;
@@ -40,7 +48,7 @@ function renderRecommendation(plant) {
     imageContainer.appendChild(potImage);
   }
 
-  recommendationContainer.appendChild(imageContainer);
+  cardInfo.appendChild(imageContainer);
 
   const information = document.createElement('div');
   information.classList.add('information');
@@ -67,7 +75,19 @@ function renderRecommendation(plant) {
     information.appendChild(extrasInfo);
   }
 
-  recommendationContainer.appendChild(information);
+  cardInfo.appendChild(information);
+
+  const custumizeBtn = document.createElement('button');
+  custumizeBtn.textContent = 'Custumize !';
+  custumizeBtn.classList.add('custtomBtn');
+  custumizeBtn.setAttribute('id', 'custtomBtn');
+  cardInfo.appendChild(custumizeBtn);
+
+  custumizeBtn.addEventListener('click', function () {
+    const cardContent = recommendationContainer.innerHTML;
+    const encodedContent = encodeURIComponent(cardContent);
+    window.location.href = ('custom.html?contenido=', encodedContent);
+  });
 }
 
 export default renderRecommendation;

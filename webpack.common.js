@@ -2,11 +2,22 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    index: './src/index.js',
+    custtom: './src/custtom.js',
+  },
   plugins: [
     new HtmlWebpackPlugin({
+      filename: 'index.html',
       template: './src/template.html',
       inject: 'body',
+      chunks: ['index'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'custtom.html',
+      template: './src/custom.html',
+      inject: 'body',
+      chunks: ['custtom'],
     }),
     new CleanWebpackPlugin(),
   ],
@@ -20,7 +31,7 @@ module.exports = {
         test: /\.html$/,
         use: ['html-loader'],
       },
-      {
+      /* {
         test: /\.(svg|png|jpg|)$/,
         use: {
           loader: 'file-loader',
@@ -29,7 +40,7 @@ module.exports = {
             outputPath: 'assets/',
           },
         },
-      },
+      }, */
     ],
   },
   devServer: {
