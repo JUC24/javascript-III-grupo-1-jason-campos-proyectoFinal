@@ -3,7 +3,7 @@ import {
   getPlantImage,
   getPotImage,
   getExtraImage,
-} from './datas';
+} from '../helpers/datas';
 
 function renderRecommendation(plant) {
   const recommendationContainer = document.getElementById('recommendation');
@@ -25,14 +25,14 @@ function renderRecommendation(plant) {
   imageContainer.classList.add('image-container');
 
   const plantImage = document.createElement('img');
-  plantImage.src = `/assets/${getPlantImage(plant.name)}.png`;
+  plantImage.src = `./assets/${getPlantImage(plant.name)}.png`;
   plantImage.alt = getPlantName(plant.name);
   imageContainer.appendChild(plantImage);
 
   if (plant.extras.length > 0) {
     for (const extra of plant.extras) {
       const extraImage = document.createElement('img');
-      extraImage.src = `/assets/${getExtraImage(extra)}.png`;
+      extraImage.src = `./assets/${getExtraImage(extra)}.png`;
       extraImage.alt = extra;
       imageContainer.appendChild(extraImage);
     }
@@ -40,7 +40,7 @@ function renderRecommendation(plant) {
 
   if (plant.potStyle) {
     const potImage = document.createElement('img');
-    potImage.src = `/assets/${getPotImage(
+    potImage.src = `./assets/${getPotImage(
       plant.potMaterial,
       plant.potStyle,
     )}.png`;

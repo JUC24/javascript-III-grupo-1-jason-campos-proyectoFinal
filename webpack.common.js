@@ -28,19 +28,13 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.html$/,
-        use: ['html-loader'],
-      },
-      /* {
         test: /\.(svg|png|jpg|)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'assets/',
-          },
-        },
-      }, */
+        type: 'asset',
+      },
+      {
+        test: /\.txt/,
+        type: 'asset/source',
+      },
     ],
   },
   devServer: {

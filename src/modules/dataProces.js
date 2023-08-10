@@ -1,5 +1,5 @@
-import PlantBuilder from './builder';
-import { getPlantImage, getExtraImage } from './datas';
+import PlantBuilder from '../helpers/builder';
+import { getPlantImage, getExtraImage } from '../helpers/datas';
 
 function processData() {
   const plantForm = document.getElementById('myForm');

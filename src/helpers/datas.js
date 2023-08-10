@@ -24,35 +24,35 @@ function getPlantName(plantName) {
 function getPlantImage(plantName) {
   switch (plantName) {
     case 'Low Light Plants':
-      return 'plant-sansevieria';
+      return 'plant_sansevieria';
     case 'Medium Light Plants':
-      return 'plant-aglaonema';
+      return 'plant_aglaonema';
     case 'Outdoor Plants':
-      return 'plant-aloe';
+      return 'plant_aloe';
     case 'Non-Toxic Plant (Low Light)':
-      return 'plant-fern';
+      return 'plant_fern';
     case 'Toxic Plant (Low Light)':
-      return 'plant-peace-lily';
+      return 'plant_peace_lily';
     case 'Non-Toxic Plant (Medium Light)':
-      return 'plant-monstera';
+      return 'plant_monstera';
     case 'Toxic Plant (Medium Light)':
-      return 'plant-peace-lily';
+      return 'plant_peace_lily';
     case 'Non-Toxic Plant (Outdoor)':
-      return 'plant-cactus';
+      return 'plant_cactus';
     case 'Toxic Plant (Outdoor)':
-      return 'plant-aloe';
+      return 'plant_aloe';
     default:
       return '';
   }
 }
 
 function getPotImage(material, style) {
-  let potName = `simple-${material}-pot`;
+  let potName = `simple_${material}_pot`;
 
   if (style === 'decorated') {
-    potName += '-decorated';
+    potName += '_decorated';
   } else if (style === 'lotsDecoration') {
-    potName = `painted-${material}-pot-decorated`;
+    potName = `painted_${material}_pot_decorated`;
   }
 
   return potName;
@@ -61,11 +61,11 @@ function getPotImage(material, style) {
 function getExtraImage(extra) {
   switch (extra) {
     case 'moss-pole':
-      return 'moss-pole';
+      return 'moss_pole';
     case 'pebbles':
       return 'pebbles';
     case 'mini-plants':
-      return 'mini-plants';
+      return 'mini_plants';
   }
 }
 
