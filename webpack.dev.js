@@ -6,7 +6,7 @@ module.exports = merge(common, {
   mode: 'development',
   entry: {
     index: './src/index.js',
-    custtom: './src/custtom.js',
+    custom: './src/custom.js',
   },
   output: {
     filename: '[name].js',

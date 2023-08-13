@@ -9,6 +9,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
+  "ignorePatterns":["jest.config.js", "babel.config.js", "dist", "webpack.common.js", "webpack.dev.js", "webpack.prod.js", "dataProcess.test.js"] ,
   "rules":{
     "linebreak-style": [0],
     "import/extensions":[

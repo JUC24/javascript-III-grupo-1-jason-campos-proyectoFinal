@@ -1,4 +1,4 @@
-function getPlantName(plantName) {
+function plantNames(plantName) {
   switch (plantName) {
     case 'Low Light Plants':
       return 'Sansevieria';
@@ -21,52 +21,65 @@ function getPlantName(plantName) {
   }
 }
 
-function getPlantImage(plantName) {
+function plantImage(plantName) {
   switch (plantName) {
     case 'Low Light Plants':
-      return 'plant_sansevieria';
+      return 'plant-sansevieria';
     case 'Medium Light Plants':
-      return 'plant_aglaonema';
+      return 'plant-aglaonema';
     case 'Outdoor Plants':
-      return 'plant_aloe';
+      return 'plant-aloe';
     case 'Non-Toxic Plant (Low Light)':
-      return 'plant_fern';
+      return 'plant-fern';
     case 'Toxic Plant (Low Light)':
-      return 'plant_peace_lily';
+      return 'plant-peace-lily';
     case 'Non-Toxic Plant (Medium Light)':
-      return 'plant_monstera';
+      return 'plant-monstera';
     case 'Toxic Plant (Medium Light)':
-      return 'plant_peace_lily';
+      return 'plant-peace_lily';
     case 'Non-Toxic Plant (Outdoor)':
-      return 'plant_cactus';
+      return 'plant-cactus';
     case 'Toxic Plant (Outdoor)':
-      return 'plant_aloe';
+      return 'plant-aloe';
     default:
       return '';
   }
 }
 
-function getPotImage(material, style) {
-  let potName = `simple_${material}_pot`;
+function potImage(material, style) {
+  let potName = `simple-${material}-pot`;
 
   if (style === 'decorated') {
-    potName += '_decorated';
+    potName += '-decorated';
   } else if (style === 'lotsDecoration') {
-    potName = `painted_${material}_pot_decorated`;
+    potName = `painted-${material}-pot-decorated`;
   }
 
   return potName;
 }
 
-function getExtraImage(extra) {
+function extraImage(extra) {
   switch (extra) {
     case 'moss-pole':
-      return 'moss_pole';
+      return 'moss-pole';
     case 'pebbles':
       return 'pebbles';
     case 'mini-plants':
-      return 'mini_plants';
+      return 'mini-plants';
   }
 }
 
-export { getPlantName, getPlantImage, getPotImage, getExtraImage };
+function soilImage(soilType) {
+  switch (soilType) {
+    case 'fertilized':
+      return 'soil-fertilized';
+    case 'drainage':
+      return 'soil-drainage';
+    case 'composted':
+      return 'soil-composted';
+    default:
+      return '';
+  }
+}
+
+export { plantNames, plantImage, potImage, extraImage, soilImage };

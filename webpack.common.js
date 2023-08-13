@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   entry: {
     index: './src/index.js',
-    custtom: './src/custtom.js',
+    custom: './src/custom.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -14,10 +14,10 @@ module.exports = {
       chunks: ['index'],
     }),
     new HtmlWebpackPlugin({
-      filename: 'custtom.html',
+      filename: 'custom.html',
       template: './src/custom.html',
       inject: 'body',
-      chunks: ['custtom'],
+      chunks: ['custom'],
     }),
     new CleanWebpackPlugin(),
   ],
@@ -29,7 +29,14 @@ module.exports = {
       },
       {
         test: /\.(svg|png|jpg|)$/,
-        type: 'asset',
+        type: 'asset/resource',
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'assets/',
+          },
+        },
       },
       {
         test: /\.txt/,

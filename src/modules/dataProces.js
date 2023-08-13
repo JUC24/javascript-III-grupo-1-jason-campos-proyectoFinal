@@ -1,5 +1,5 @@
 import PlantBuilder from '../helpers/builder';
-import { getPlantImage, getExtraImage } from '../helpers/datas';
+import { plantImage, extraImage } from '../helpers/datas';
 
 function processData() {
   const plantForm = document.getElementById('myForm');
@@ -67,11 +67,11 @@ function processData() {
       plantBuilder
         .setPotMaterial('Clay')
         .withSoil('Drainage Soil')
-        .PlantImage(getPlantImage(plantName));
+        .PlantImage(plantImage(plantName));
       break;
     case 'underwater':
     case 'notKnow':
-      plantBuilder.setPotMaterial('Ceramic');
+      plantBuilder.setPotMaterial('ceramic');
       break;
   }
 
@@ -110,7 +110,7 @@ function processData() {
 
   plantBuilder
     .setPotColor('clay')
-    .withExtras(extra.map((extras) => getExtraImage(extras)));
+    .withExtras(extra.map((extras) => extraImage(extras)));
 
   const plantResult = plantBuilder.build();
   return plantResult;

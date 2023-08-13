@@ -1,8 +1,9 @@
 import {
-  getPlantName,
-  getPlantImage,
-  getPotImage,
-  getExtraImage,
+  plantNames,
+  plantImage,
+  potImage,
+  extraImage,
+  soilImage,
 } from '../helpers/datas';
 
 function renderRecommendation(plant) {
@@ -18,35 +19,37 @@ function renderRecommendation(plant) {
   cardInfo.appendChild(title);
 
   const subtitle = document.createElement('h3');
-  subtitle.textContent = getPlantName(plant.name);
+  subtitle.textContent = plantNames(plant.name);
   cardInfo.appendChild(subtitle);
 
   const imageContainer = document.createElement('div');
   imageContainer.classList.add('image-container');
 
-  const plantImage = document.createElement('img');
-  plantImage.src = `./assets/${getPlantImage(plant.name)}.png`;
-  plantImage.alt = getPlantName(plant.name);
-  imageContainer.appendChild(plantImage);
+  const plantImg = document.createElement('img');
+  plantImg.src = `./assets/${plantImage(plant.name)}.png`;
+  plantImg.alt = plantNames(plant.name);
+  imageContainer.appendChild(plantImg);
 
   if (plant.extras.length > 0) {
     for (const extra of plant.extras) {
-      const extraImage = document.createElement('img');
-      extraImage.src = `./assets/${getExtraImage(extra)}.png`;
-      extraImage.alt = extra;
-      imageContainer.appendChild(extraImage);
+      const extraImg = document.createElement('img');
+      extraImg.src = `./assets/${extraImage(extra)}.png`;
+      extraImg.alt = extra;
+      imageContainer.appendChild(extraImg);
     }
   }
 
   if (plant.potStyle) {
-    const potImage = document.createElement('img');
-    potImage.src = `./assets/${getPotImage(
-      plant.potMaterial,
-      plant.potStyle,
-    )}.png`;
+    const potImg = document.createElement('img');
+    potImg.src = `./assets/${potImage(plant.potMaterial, plant.potStyle)}.png`;
     potImage.alt = `${plant.potMaterial}`;
-    imageContainer.appendChild(potImage);
+    imageContainer.appendChild(potImg);
   }
+
+  const soilImg = document.createElement('img');
+  soilImg.src = `assets/soil-${soilImage(plant.soil)}.png`;
+  soilImg.alt = `Soil: ${plant.soil}`;
+  imageContainer.appendChild(soilImg);
 
   cardInfo.appendChild(imageContainer);
 
@@ -54,7 +57,7 @@ function renderRecommendation(plant) {
   information.classList.add('information');
 
   const plantInfo = document.createElement('p');
-  plantInfo.textContent = `Name: ${getPlantName(plant.name)}`;
+  plantInfo.textContent = `Name: ${plantNames(plant.name)}`;
   information.appendChild(plantInfo);
 
   const soilInfo = document.createElement('p');
