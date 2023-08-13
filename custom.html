@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style/styles.css">
+  <title>Document</title>
+</head>
+<body>
+  <h2>Customize Your Plant Order</h2>
+<div class="formCustom">
+  <form>
+    <!--****************************Question 1**************************************-->
+    <fieldset>
+      <legend>Choose your pot:</legend>
+      <label>
+        <input type="radio" name="pot" value="Clay" required/>
+        Clay
+      </label>
+      <label>
+        <input type="radio" name="pot" value="Ceramic" required/>
+        Ceramic
+      </label>
+    </fieldset>
+  
+    <!--****************************Question 2**************************************-->
+    <fieldset>
+      <legend>Pot decorations:</legend>
+      <label>
+        <input type="checkbox" name="potDecorations" value="Yes" />
+        Yes
+      </label>
+      <label>
+        <input type="checkbox" name="potDecorations" value="No" />
+        No
+      </label>
+    </fieldset>
+  
+    <!--****************************Question 3**************************************-->
+    <fieldset>
+      <legend>Pot color:</legend>
+      <label>
+        <input type="checkbox" name="potColor" value="Yes" />
+        Yes
+      </label>
+      <label>
+        <input type="checkbox" name="potColor" value="No" />
+        No
+      </label>
+    </fieldset>
+  
+    <!-- Pot color options -->
+    <fieldset id="potColorOptions">
+      <legend>Pot color options:</legend>
+      <label>
+        <input type="radio" name="potColorOption" value="Blue" />
+        Blue
+      </label>
+      <label>
+        <input type="radio" name="potColorOption" value="Pink" />
+        Pink
+      </label>
+      <label>
+        <input type="radio" name="potColorOption" value="Green" />
+        Green
+      </label>
+      <label>
+        <input type="radio" name="potColorOption" value="Purple" />
+        Purple
+      </label>
+    </fieldset>
+  
+    <!--****************************Question 4**************************************-->
+    <fieldset>
+      <label for="plant">Choose your plant:</label>
+      <select name="plant" id="plant" required>
+        <option value="">Select a plant</option>
+        <option value="Aglaonema Silver Bay">Aglaonema Silver Bay</option>
+        <option value="Aloe Vera">Aloe Vera</option>
+        <option value="Boston Fern">Boston Fern</option>
+        <option value="Cactus">Cactus</option>
+        <option value="Monstera Deliciosa">Monstera Deliciosa</option>
+        <option value="Peace Lily">Peace Lily</option>
+        <option value="Sansevieria">Sansevieria</option>
+      </select>
+    </fieldset>
+  
+    <!--****************************Question 5**************************************-->
+    <fieldset>
+      <legend>Choose your soil:</legend>
+      <label>
+        <input type="radio" name="soil" value="Basic composted soil" required />
+        Basic composted soil
+      </label>
+      <label>
+        <input type="radio" name="soil" value="Premium fertilized soil" required />
+        Premium fertilized soil
+      </label>
+      <label>
+        <input type="radio" name="soil" value="Easy drainage soil" required />
+        Easy drainage soil
+      </label>
+    </fieldset>
+  
+    <!--****************************Question 6**************************************-->
+    <fieldset>
+      <legend>Choose your extras:</legend>
+      <label>
+        <input type="checkbox" name="extras" value="Moss pole" />
+        Moss pole
+      </label>
+      <label>
+        <input type="checkbox" name="extras" value="Pebbles" />
+        Pebbles
+      </label>
+      <label>
+        <input type="checkbox" name="extras" value="Smaller plants" />
+        Smaller plants
+      </label>
+    </fieldset>
+  </form>
+  <div id="recommendation" class="recommendationBox">
+    <h2>Custom Plant Order:</h2>
+  </div>
+</div>
+</body>
+<script type="module" src="./custtom.js"></script>
+</div>
+</html>
